@@ -1,0 +1,75 @@
+<!-- student.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Velvyn Student Portal</title>
+  <style>
+    body { font-family: 'Open Sans', sans-serif; padding: 40px; }
+    h1 { color: #381a57; }
+    input, button { padding: 10px; width: 100%; margin-top: 10px; border-radius: 6px; }
+    button { background: #381a57; color: white; border: none; cursor: pointer; }
+    #dashboard { display: none; margin-top: 30px; }
+    ul { list-style: none; padding: 0; }
+    nav a { margin-right: 15px; text-decoration: none; color: #381a57; }
+  </style>
+</head>
+<body>
+
+<h1>Student Login</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="student.html">Student Portal</a>
+  <a href="staff.html">Staff Login</a>
+</nav>
+
+<div id="login">
+  <input id="username" placeholder="Username" />
+  <input id="password" type="password" placeholder="Password" />
+  <button onclick="login()">Log In</button>
+  <p id="error" style="color: red;"></p>
+</div>
+
+<div id="dashboard">
+  <h2>Welcome, Baron Whisperer</h2>
+  <p><strong>Discipline:</strong> Sonic Arts</p>
+  <p><strong>Student ID:</strong> VCA-2025-0007</p>
+
+  <h3>Schedule:</h3>
+  <ul>
+    <li>9AM – Sonic Arts</li>
+    <li>10:30AM – Movement Theory</li>
+    <li>1PM – Writing Workshop</li>
+    <li>2:30PM – Fashion & Design</li>
+  </ul>
+
+  <h3>Projects:</h3>
+  <ul>
+    <li>"Moonlight Sonata Remix"</li>
+    <li>"Shadow Theater" – Group</li>
+  </ul>
+
+  <button onclick="logout()">Log Out</button>
+</div>
+
+<script>
+  const users = { "baronwhisperer": "velvet123" };
+
+  function login() {
+    const user = document.getElementById('username').value.toLowerCase();
+    const pass = document.getElementById('password').value;
+    if (users[user] === pass) {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+    } else {
+      document.getElementById('error').textContent = 'Invalid credentials.';
+    }
+  }
+
+  function logout() {
+    location.reload();
+  }
+</script>
+
+</body>
+</html>

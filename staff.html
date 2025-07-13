@@ -1,0 +1,66 @@
+<!-- staff.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Staff Dashboard – Velvyn</title>
+  <style>
+    body { font-family: 'Open Sans', sans-serif; padding: 40px; }
+    h1 { color: #381a57; }
+    input, button { padding: 10px; width: 100%; margin-top: 10px; border-radius: 6px; }
+    button { background: #381a57; color: white; border: none; cursor: pointer; }
+    #panel { display: none; margin-top: 30px; }
+    nav a { margin-right: 15px; text-decoration: none; color: #381a57; }
+    .app-entry { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Staff Login</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="student.html">Student Portal</a>
+  <a href="staff.html">Staff Login</a>
+</nav>
+
+<div id="login">
+  <input id="staffUser" placeholder="Staff Username" />
+  <input id="staffPass" type="password" placeholder="Password" />
+  <button onclick="staffLogin()">Log In</button>
+  <p id="staffError" style="color: red;"></p>
+</div>
+
+<div id="panel">
+  <h2>📥 Application Inbox</h2>
+  <div class="app-entry">
+    <strong>Name:</strong> Jay Xylen<br />
+    <strong>Email:</strong> jayxylen@velvyn.edu<br />
+    <strong>Discipline:</strong> Sonic Arts<br />
+    <strong>Portfolio:</strong> <a href="#">jayxylen.com</a><br />
+    <strong>Message:</strong> Art is the only way I breathe.
+  </div>
+  <!-- You can manually add more fake entries above as needed -->
+  <button onclick="logout()">Log Out</button>
+</div>
+
+<script>
+  const staffUsers = { "directorxylen": "admin432" };
+
+  function staffLogin() {
+    const user = document.getElementById('staffUser').value.toLowerCase();
+    const pass = document.getElementById('staffPass').value;
+    if (staffUsers[user] === pass) {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('panel').style.display = 'block';
+    } else {
+      document.getElementById('staffError').textContent = 'Invalid credentials.';
+    }
+  }
+
+  function logout() {
+    location.reload();
+  }
+</script>
+
+</body>
+</html>

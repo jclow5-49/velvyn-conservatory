@@ -1,211 +1,61 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Velvyn Conservatory of the Arts</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #fdfdfd;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #381a57;
-      color: white;
-      padding: 20px 40px;
-      text-align: center;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin: 0;
-    }
-    main {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: #381a57;
-    }
-    label {
-      display: block;
-      margin-top: 20px;
-      font-weight: bold;
-    }
+    body { font-family: 'Open Sans', sans-serif; padding: 40px; background: #fdfdfd; }
+    h1 { font-family: 'Playfair Display', serif; color: #381a57; }
+    nav a { margin-right: 15px; color: #381a57; text-decoration: none; }
+    form { max-width: 600px; margin-top: 20px; }
+    label { display: block; margin-top: 20px; }
     input, textarea, select, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      box-sizing: border-box;
+      width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;
     }
-    button {
-      background-color: #381a57;
-      color: white;
-      cursor: pointer;
-      margin-top: 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 18px;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background-color: #4e2b72;
-    }
-    footer {
-      background-color: #eee;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-    }
-    #login-section, #portal {
-      max-width: 500px;
-      margin: auto;
-      padding: 30px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      background: #fafafa;
-    }
-    #message {
-      text-align: center;
-      margin-top: 15px;
-      font-weight: bold;
-    }
+    button { background: #381a57; color: white; cursor: pointer; }
+    button:hover { background: #4e2b72; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Velvyn Conservatory of the Arts</h1>
-  <p>Est. 1893 – New Elaria, GA</p>
-</header>
+<h1>Velvyn Conservatory of the Arts</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="student.html">Student Portal</a>
+  <a href="staff.html">Staff Login</a>
+</nav>
 
-<main>
-  <section>
-    <h2>Welcome to Velvyn</h2>
-    <p>Velvyn Conservatory is a prestigious institution where artistry becomes legacy. We welcome creators of sound, motion, image, word, and design to pursue excellence.</p>
-  </section>
+<p>Welcome to Velvyn Conservatory. Apply now to begin your creative legacy.</p>
 
-  <section>
-    <h2>Apply Now</h2>
-    <form action="https://formsubmit.co/jackmn338@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="box">
-      
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required>
+<form action="https://formsubmit.co/jackmn338@gmail.com" method="POST">
+  <input type="hidden" name="_captcha" value="false">
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
+  <label for="name">Full Name:</label>
+  <input type="text" name="name" required />
 
-      <label for="discipline">Artistic Discipline:</label>
-      <select id="discipline" name="discipline" required>
-        <option value="">-- Choose One --</option>
-        <option value="sonic-arts">Sonic Arts</option>
-        <option value="performance">Performance & Motion</option>
-        <option value="visual-fab">Visual Fabrication</option>
-        <option value="word-image">Word & Image</option>
-        <option value="stylecraft">Stylecraft</option>
-      </select>
+  <label for="email">Email:</label>
+  <input type="email" name="email" required />
 
-      <label for="portfolio">Portfolio (Link):</label>
-      <input type="url" id="portfolio" name="portfolio" required>
+  <label for="discipline">Discipline:</label>
+  <select name="discipline" required>
+    <option value="">-- Select --</option>
+    <option value="Sonic Arts">Sonic Arts</option>
+    <option value="Performance">Performance & Motion</option>
+    <option value="Visual">Visual Fabrication</option>
+    <option value="Word">Word & Image</option>
+    <option value="Style">Stylecraft</option>
+  </select>
 
-      <label for="message">What does art mean to you?</label>
-      <textarea name="message" rows="5" required></textarea>
+  <label for="portfolio">Portfolio URL:</label>
+  <input type="url" name="portfolio" required />
 
-      <button type="submit">Submit Application</button>
-    </form>
-  </section>
+  <label for="message">What does art mean to you?</label>
+  <textarea name="message" required></textarea>
 
-  <section id="login-section">
-    <h2>Student Login</h2>
-    <form id="loginForm">
-      <label for="username">Username</label>
-      <input id="username" type="text" autocomplete="username" required />
-
-      <label for="password">Password</label>
-      <input id="password" type="password" autocomplete="current-password" required />
-
-      <button type="submit">Log In</button>
-    </form>
-    <div id="message"></div>
-  </section>
-
-  <div id="portal" style="display:none;">
-    <h3>Student Dashboard</h3>
-    <p>🎓 <strong>Name:</strong> Baron Whisperer</p>
-    <p>🎨 <strong>Discipline:</strong> Sonic Arts</p>
-    <p>🆔 <strong>ID:</strong> VCA-2025-0007</p>
-
-    <h4>📅 Class Schedule</h4>
-    <ul>
-      <li>9AM – Sonic Arts 101 (Room 102)</li>
-      <li>10:30AM – Movement Theory (Dance B)</li>
-      <li>1PM – Writing Workshop (Room 23)</li>
-      <li>2:30PM – Fashion & Design (Studio 5)</li>
-    </ul>
-
-    <h4>🚨 Projects</h4>
-    <ul>
-      <li>"Moonlight Sonata Remix"</li>
-      <li>"Shadow Theater" – Group Piece</li>
-      <li>Upcoming: Studio Solstice Showcase</li>
-    </ul>
-  </div>
-</main>
-
-<footer>
-  Velvyn Conservatory • @VelvynConservatory • office@velvyn.edu
-</footer>
-
-<script>
-  const users = {
-    'baronwhisperer': 'velvet123',
-    'jalenarts': 'shadowmoon',
-    'solennepoet': 'rainlight7'
-  };
-
-  const form = document.getElementById('loginForm');
-  const message = document.getElementById('message');
-  const portal = document.getElementById('portal');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const username = document.getElementById('username').value.trim().toLowerCase();
-    const password = document.getElementById('password').value;
-
-    if(users[username] && users[username] === password) {
-      message.style.color = 'green';
-      message.textContent = 'Login successful. Welcome, ' + username + '!';
-      form.style.display = 'none';
-      portal.style.display = 'block';
-    } else {
-      message.style.color = '#b22222';
-      message.textContent = 'Invalid username or password.';
-    }
-  });
-</script>
+  <button type="submit">Submit Application</button>
+</form>
 
 </body>
 </html>
-
-<form action="https://formsubmit.co/your@email.com" method="POST">
-     <input type="text" name="name" required>
-     <input type="email" name="email" required>
-     <button type="submit">Send</button>
-</form>
-
-
